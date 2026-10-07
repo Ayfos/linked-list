@@ -85,6 +85,25 @@ class LinkedList {
         }
         return current.value;
     }
+
+    // devuelve el valor del nodo en el índice indicado, si no existe devuelve undefined
+
+    at(index) {
+        if (index < 0) {
+            return undefined;
+        }
+
+        let current = this._head;
+        let i = 0;
+        while(current !== null) {
+            if (i === index) {
+                return current.value;
+            }
+            current = current.nextNode;
+            i++;
+        }
+        return undefined;
+    }
 }
 
 export { Node, LinkedList };

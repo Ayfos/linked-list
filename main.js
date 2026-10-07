@@ -5,9 +5,8 @@ list.append("dog");
 list.append("cat");
 list.append("parrot");
 
-console.log("Primer nodo:", list.head());  
-console.log("Último nodo:", list.tail());  
-
-const emptyList = new LinkedList();
-console.log("Vacía - primer:", emptyList.head());   
-console.log("Vacía - último:", emptyList.tail());   
+console.log("Índice 0:", list.at(0)); 
+console.log("Índice 1:", list.at(1));  
+console.log("Índice 2:", list.at(2));  
+console.log("Índice 3:", list.at(3));  
+console.log("Índice -1:", list.at(-1));  
