@@ -71,6 +71,20 @@ class LinkedList {
         }
         return this._head.value;
     }
+
+    //Devolver el valor del último nodo de la lista, si la lista está vacía es undefined
+
+    tail() {
+        if (this._head === null) {
+            return undefined;
+        }
+
+        let current = this._head;
+        while (current.nextNode !== null) {
+            current = current.nextNode;
+        }
+        return current.value;
+    }
 }
 
 export { Node, LinkedList };
