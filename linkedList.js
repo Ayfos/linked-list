@@ -116,6 +116,20 @@ class LinkedList {
         return value;
     }
 
+    // Devuelve true si el valor pasado está en la lista, y false si no lo está
+
+    contains(value) {
+        let current = this._head;
+
+        while(current !== null) {
+            if(current.value === value) {
+                return true;
+            }
+            current = current.nextNode;
+        }
+        return false;
+    }
+
 }
 
 export { Node, LinkedList };

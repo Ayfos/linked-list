@@ -5,15 +5,8 @@ list.append("dog");
 list.append("cat");
 list.append("parrot");
 
-console.log("Lista inicial:", list.toString());
-
-console.log("Pop 1:", list.pop());
-console.log("Lista después:", list.toString());
-
-console.log("Pop 2:", list.pop());
-console.log("Lista después:", list.toString());
-
-console.log("Pop 3:", list.pop());
-console.log("Lista después:", list.toString());
-
-console.log("Pop 4 (vacía):", list.pop());
+console.log("¿Contiene 'cat'?", list.contains("cat"));     
+console.log("¿Contiene 'dog'?", list.contains("dog"));     
+console.log("¿Contiene 'parrot'?", list.contains("parrot")); 
+console.log("¿Contiene 'fish'?", list.contains("fish"));  
+console.log("¿Contiene 'Dog'?", list.contains("Dog"));     
