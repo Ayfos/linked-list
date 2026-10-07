@@ -1,4 +1,4 @@
-//creo las clases para crear la lista enlazada
+// creo las clases para crear la lista enlazada
 class Node {
     constructor(value = null, nextNode = null) {
         this.value = value;
@@ -10,10 +10,11 @@ class LinkedList {
     constructor() {
         this.head = null;
     }
+
     // Agrega un nuevo nodo al final de la lista
     append(value) {
         const newNode = new Node(value);
-        
+
         if (this.head === null) {
             this.head = newNode;
             return;
@@ -25,5 +26,22 @@ class LinkedList {
         }
         current.nextNode = newNode;
     }
+
+    // Convierte la lista a una cadena de texto
+    toString() {
+        if (this.head === null) {
+            return "";
+        }
+
+        let result = "";
+        let current = this.head;
+        while (current !== null) {
+            result += `( ${current.value} ) -> `;
+            current = current.nextNode;
+        }
+        result += "null";
+        return result;
+    }
 }
+
 export { Node, LinkedList };
