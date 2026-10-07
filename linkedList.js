@@ -8,19 +8,19 @@ class Node {
 
 class LinkedList {
     constructor() {
-        this.head = null;
+        this._head = null;
     }
 
     // Agrega un nuevo nodo al final de la lista
     append(value) {
         const newNode = new Node(value);
 
-        if (this.head === null) {
-            this.head = newNode;
+        if (this._head === null) {
+            this._head = newNode;
             return;
         }
 
-        let current = this.head;
+        let current = this._head;
         while (current.nextNode !== null) {
             current = current.nextNode;
         }
@@ -30,18 +30,18 @@ class LinkedList {
     // Añadir un nuevo nodo al principio de la lista
     prepend(value) {
         const newNode = new Node(value);
-        newNode.nextNode = this.head;
-        this.head = newNode;
+        newNode.nextNode = this._head;
+        this._head = newNode;
     }
 
     // Convierte la lista a una cadena de texto
     toString() {
-        if (this.head === null) {
+        if (this._head === null) {
             return "";
         }
 
         let result = "";
-        let current = this.head;
+        let current = this._head;
         while (current !== null) {
             result += `( ${current.value} ) -> `;
             current = current.nextNode;
@@ -54,13 +54,22 @@ class LinkedList {
 
     size() {
         let count = 0;
-        let current = this.head;
+        let current = this._head;
 
         while(current !== null) {
             count ++;
             current = current.nextNode;
         }
         return count;
+    }
+
+    //Devolver el valor del primer nodo de la lista, si la lista está vacía es undefined
+
+    head() {
+        if (this._head === null) {
+            return undefined;
+        }
+        return this._head.value;
     }
 }
 

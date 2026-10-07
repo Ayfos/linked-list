@@ -3,9 +3,8 @@ import { LinkedList } from "./linkedList.js";
 const list = new LinkedList();
 list.append("dog");
 list.append("cat");
-list.append("parrot");
 
-console.log("Tamaño:", list.size());  
+console.log("Primer nodo:", list.head());
 
 const emptyList = new LinkedList();
-console.log("Tamaño vacía:", emptyList.size());  
+console.log("Lista vacía:", emptyList.head());
