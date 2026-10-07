@@ -27,6 +27,13 @@ class LinkedList {
         current.nextNode = newNode;
     }
 
+    // Añadir un nuevo nodo al principio de la lista
+    prepend(value) {
+        const newNode = new Node(value);
+        newNode.nextNode = this.head;
+        this.head = newNode;
+    }
+
     // Convierte la lista a una cadena de texto
     toString() {
         if (this.head === null) {
