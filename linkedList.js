@@ -49,6 +49,19 @@ class LinkedList {
         result += "null";
         return result;
     }
+
+    //Devolver el número total de nodos de la lista
+
+    size() {
+        let count = 0;
+        let current = this.head;
+
+        while(current !== null) {
+            count ++;
+            current = current.nextNode;
+        }
+        return count;
+    }
 }
 
 export { Node, LinkedList };
