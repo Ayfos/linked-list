@@ -104,6 +104,18 @@ class LinkedList {
         }
         return undefined;
     }
+
+    // elimina el primer nodo de la lista, si la lista está vacía es undefined
+
+    pop() {
+        if(this._head === null) {
+            return undefined;
+        }
+        const value = this._head.value;
+        this._head = this._head.nextNode;
+        return value;
+    }
+
 }
 
 export { Node, LinkedList };

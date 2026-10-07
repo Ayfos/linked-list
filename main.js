@@ -5,8 +5,15 @@ list.append("dog");
 list.append("cat");
 list.append("parrot");
 
-console.log("Índice 0:", list.at(0)); 
-console.log("Índice 1:", list.at(1));  
-console.log("Índice 2:", list.at(2));  
-console.log("Índice 3:", list.at(3));  
-console.log("Índice -1:", list.at(-1));  
+console.log("Lista inicial:", list.toString());
+
+console.log("Pop 1:", list.pop());
+console.log("Lista después:", list.toString());
+
+console.log("Pop 2:", list.pop());
+console.log("Lista después:", list.toString());
+
+console.log("Pop 3:", list.pop());
+console.log("Lista después:", list.toString());
+
+console.log("Pop 4 (vacía):", list.pop());
