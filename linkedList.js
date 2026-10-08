@@ -130,6 +130,22 @@ class LinkedList {
         return false;
     }
 
+    // Devuelve el indice del nodo que contiene el valor 
+
+    findIndex(value) {
+        let current = this._head;
+        let i = 0;
+
+        while(current !== null) {
+            if(current.value === value) {
+                return i;
+            }
+            current = current.nextNode;
+            i++;
+        }
+        return -1;
+    }
+
 }
 
 export { Node, LinkedList };
