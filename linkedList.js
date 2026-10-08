@@ -167,5 +167,40 @@ class LinkedList {
         }
         current.nextNode = current.nextNode.nextNode;
     }
+
+    //  Método insertAt: inserta un nuevo nodo con el valor indicado en el índice indicado
+
+    insertAt(index, ...values) {
+        if (index < 0 || index > this.size()) {
+            throw new RangeError("Índice fuera de los límites");
+        }
+    
+        // Caso especial: insertar al principio
+        if (index === 0) {
+            for (let i = values.length - 1; i >= 0; i--) {
+                this.prepend(values[i]);
+            }
+            return;
+        }
+    
+        // Caso general: insertar en medio o al final
+        let current = this._head;
+        let i = 0;
+    
+        while (i < index - 1) {
+            current = current.nextNode;
+            i++;
+        }
+    
+        const nextNode = current.nextNode;
+    
+        for (const value of values) {
+            const newNode = new Node(value);
+            current.nextNode = newNode;
+            current = newNode;
+        }
+    
+        current.nextNode = nextNode;
+    }
 }
 export { Node, LinkedList };

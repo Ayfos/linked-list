@@ -1,25 +1,27 @@
 import { LinkedList } from "./linkedList.js";
 
 const list = new LinkedList();
-list.append("dog");
-list.append("cat");
-list.append("parrot");
-list.append("hamster");
+list.append(1);
+list.append(2);
+list.append(3);
 
-console.log("Lista inicial:", list.toString());
+console.log("Inicial:", list.toString());
+// ( 1 ) -> ( 2 ) -> ( 3 ) -> null
 
+list.insertAt(1, 10, 11);
+console.log("Después insertAt(1, 10, 11):", list.toString());
+// ( 1 ) -> ( 10 ) -> ( 11 ) -> ( 2 ) -> ( 3 ) -> null
 
-list.removeAt(1);  // eliminar "cat"
-console.log("Después de removeAt(1):", list.toString());
+list.insertAt(0, 100, 200);
+console.log("Después insertAt(0, 100, 200):", list.toString());
+// ( 100 ) -> ( 200 ) -> ( 1 ) -> ( 10 ) -> ( 11 ) -> ( 2 ) -> ( 3 ) -> null
 
+list.insertAt(list.size(), 99);
+console.log("Después insertAt(size, 99):", list.toString());
+// ( 100 ) -> ( 200 ) -> ( 1 ) -> ( 10 ) -> ( 11 ) -> ( 2 ) -> ( 3 ) -> ( 99 ) -> null
 
-list.removeAt(0);  // eliminar "dog" (el primero)
-console.log("Después de removeAt(0):", list.toString());
-
-
-// Probar el error
 try {
-    list.removeAt(10);
+    list.insertAt(100, 5);
 } catch (e) {
     console.log("Error capturado:", e.message);
 }
