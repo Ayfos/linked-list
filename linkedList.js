@@ -146,6 +146,26 @@ class LinkedList {
         return -1;
     }
 
-}
+    //Caso extra, removeAt: elimina el nodo en el índice indicado, sino existe devuelve undefined
 
+    removeAt(index) {
+        if (index < 0 || index >= this.size()) {
+            throw new RangeError("Índice fuera de los límites");
+        }
+    
+        if (index === 0) {
+            this._head = this._head.nextNode;  // ← nextNode, no newNode
+            return;
+        }
+    
+        let current = this._head;
+        let i = 0;
+    
+        while (i < index - 1) {
+            current = current.nextNode;
+            i++;
+        }
+        current.nextNode = current.nextNode.nextNode;
+    }
+}
 export { Node, LinkedList };
